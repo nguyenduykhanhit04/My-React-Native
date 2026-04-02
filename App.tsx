@@ -1,24 +1,26 @@
-import { StyleSheet, Text, View } from 'react-native';
+import { useState } from 'react';
+import { Button, StyleSheet, Text, View } from 'react-native';
 
 export default function App() {
 
+  const [count, setCount ] = useState<number>(0);
+  const [name, setName] = useState<string>("nguyenduykhanhit04");
+  const [text, setText] = useState({
+    name:"nguyenduykhanhit04",
+    age:22,
+  });
   // jsx: javascript xml
   return (
     <View style={styles.container}> 
-      <Text style={styles.text}>Hello World 1</Text> 
-      <Text style={{ color: "pink", fontSize: 40, fontWeight: 'bold'}}>Hello World 2</Text> 
+      <Text>Hello {name}</Text> 
       
-      <View style={styles.box}>
-        <Text>Hello World 3</Text>
-      </View>
-    
+      <Text>Hello {text.name}</Text>
+      <Text>Hello {text.age}</Text>
+
       <View>
-        <Text style={styles.parentText}>Hello World 4
-          <Text>Hello World 4.1</Text>
-          <Text style={styles.childText}>Hello World 5</Text>
-        </Text>
-        
+          <Button color={"red"} title='Increase' onPress={() => setCount(count + 1)} />
       </View>
+      
     </View> 
   );
 }

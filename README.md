@@ -19,3 +19,5 @@
     </View>
     - Thì thuộc tính style cho Child phải đặt trong styles.child
     - Thì thuộc tính style cho Parent phải đặt trong styles.parent
+
+- State: là một biến để lưu trữ dữ liệu của component

@@ -26,7 +26,7 @@ export default function App() {
       <Text>Age: {age} </Text>
       <TextInput 
         multiline
-        onChangeText={(value) => setAge(value)} 
+        onChangeText={(value) => setAge(+value)} 
         style={{
           borderColor: "red",
           borderWidth: 1,
@@ -34,6 +34,7 @@ export default function App() {
           padding: 15
         }} 
         keyboardType='numeric'
+        maxLength={2}
       />
       
       <Text style={{ fontSize: 40, fontWeight: "600" }}>count = {count}</Text>

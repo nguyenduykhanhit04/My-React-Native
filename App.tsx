@@ -1,24 +1,44 @@
 import { useState } from 'react';
-import { Button, StyleSheet, Text, View } from 'react-native';
+import { Button, StyleSheet, Text, TextInput, View } from 'react-native';
 
 export default function App() {
 
   const [count, setCount ] = useState<number>(0);
-  const [name, setName] = useState<string>("nguyenduykhanhit04");
-  const [text, setText] = useState({
-    name:"nguyenduykhanhit04",
-    age:22,
-  });
+  const [name, setName ] = useState<string>("");
+  const [age, setAge ] = useState<number>(0);
   // jsx: javascript xml
   return (
     <View style={styles.container}> 
-      <Text>Hello {name}</Text> 
-      
-      <Text>Hello {text.name}</Text>
-      <Text>Hello {text.age}</Text>
 
+      <Text>Name: {name} </Text>
+      <TextInput 
+        multiline
+        autoCapitalize={'characters'}
+        onChangeText={(value) => setName(value)} 
+        style={{
+          borderColor: "green",
+          borderWidth: 1,
+          width: 200,
+          padding: 15
+        }} 
+      />
+
+      <Text>Age: {age} </Text>
+      <TextInput 
+        multiline
+        onChangeText={(value) => setAge(value)} 
+        style={{
+          borderColor: "red",
+          borderWidth: 1,
+          width: 200,
+          padding: 15
+        }} 
+        keyboardType='numeric'
+      />
+      
+      <Text style={{ fontSize: 40, fontWeight: "600" }}>count = {count}</Text>
       <View>
-          <Button color={"red"} title='Increase' onPress={() => setCount(count + 1)} />
+          <Button color={"green"} title='Increase' onPress={() => setCount(count + 1)} />
       </View>
       
     </View> 

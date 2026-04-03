@@ -21,3 +21,5 @@
     - Thì thuộc tính style cho Parent phải đặt trong styles.parent
 
 - State: là một biến để lưu trữ dữ liệu của component
+
+- Text Inputs

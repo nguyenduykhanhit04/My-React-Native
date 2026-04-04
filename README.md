@@ -24,5 +24,6 @@
 
 - Text Inputs : ô để nhập vào 
 
-- Array 
+- Array : dùng map() render ra list
 - ScrollView : dùng để vuốt lên vuốt xuống giao diện
+- Flatlist

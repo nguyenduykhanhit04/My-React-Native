@@ -22,4 +22,7 @@
 
 - State: là một biến để lưu trữ dữ liệu của component
 
-- Text Inputs
+- Text Inputs : ô để nhập vào 
+
+- Array 
+- ScrollView : dùng để vuốt lên vuốt xuống giao diện

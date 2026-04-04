@@ -1,84 +1,54 @@
 import { useState } from 'react';
-import { Button, StyleSheet, Text, TextInput, View } from 'react-native';
+import { Button, ScrollView, StyleSheet, Text, TextInput, View } from 'react-native';
 
 export default function App() {
 
-  const [count, setCount ] = useState<number>(0);
-  const [name, setName ] = useState<string>("");
-  const [age, setAge ] = useState<number>(0);
-  // jsx: javascript xml
+  const [students, setStudents] = useState([
+    {id: 1, name: "Khanh", age: 18},
+    {id: 2, name: "Khanh2", age: 19},
+    {id: 3, name: "Khanh3", age: 13},
+    {id: 4, name: "Khanh4", age: 14},
+    {id: 5, name: "Khanh5", age: 15},
+    {id: 6, name: "Khanh", age: 18},
+    {id: 7, name: "Khanh2", age: 19},
+    {id: 8, name: "Khanh3", age: 13},
+    {id: 9, name: "Khanh4", age: 14},
+    {id: 10, name: "Khanh5", age: 15},
+    {id: 11, name: "Khanh", age: 18},
+    {id: 12, name: "Khanh2", age: 19},
+    {id: 13, name: "Khanh3", age: 13},
+    {id: 14, name: "Khanh4", age: 14},
+    {id: 15, name: "Khanh5", age: 15},
+  ])
+
   return (
     <View style={styles.container}> 
-
-      <Text>Name: {name} </Text>
-      <TextInput 
-        multiline
-        autoCapitalize={'characters'}
-        onChangeText={(value) => setName(value)} 
-        style={{
-          borderColor: "green",
-          borderWidth: 1,
-          width: 200,
-          padding: 15
-        }} 
-      />
-
-      <Text>Age: {age} </Text>
-      <TextInput 
-        multiline
-        onChangeText={(value) => setAge(+value)} 
-        style={{
-          borderColor: "red",
-          borderWidth: 1,
-          width: 200,
-          padding: 15
-        }} 
-        keyboardType='numeric'
-        maxLength={2}
-      />
-      
-      <Text style={{ fontSize: 40, fontWeight: "600" }}>count = {count}</Text>
-      <View>
-          <Button color={"green"} title='Increase' onPress={() => setCount(count + 1)} />
-      </View>
-      
+      <Text style={{ fontSize: 50 }}>Hello world</Text>
+      <ScrollView>
+        { students.map(item => {
+          return (
+            <View key={item.id} style={{
+              padding: 30,
+              backgroundColor: "pink",
+              marginBottom: 30
+            }}> 
+                <Text>{item.name}</Text>
+            </View>
+          )
+        })}
+      </ScrollView>
     </View> 
   );
 }
 
-// Không có khái niệm CSS trong React Native, chỉ có StyleSheet
 const styles = StyleSheet.create({
   container: {
+    padding: 50,
+    paddingHorizontal: 20,
     flex: 1,
     backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
+    // alignItems: 'center',
+    // justifyContent: 'center',
   },
-  text: {
-    color: 'red',
-    fontSize: 20,
-    fontWeight: 'bold',
-  },
-  box: {
-    width: 120,
-    height: 120,
-    backgroundColor: 'green',
-    alignItems: 'center',
-    justifyContent: 'center',
-    borderRadius: 10,
-    borderWidth: 1,
-    borderColor: 'black',
-    margin: 10,
-    padding: 10,
-  },
-  parentText: {
-    color: 'red',
-    fontSize: 20,
-    fontWeight: 'bold',
-  },
-  childText: {
-    color: 'blue',
-    fontSize: 20,
-    fontWeight: 'bold',
-  },
+
 });

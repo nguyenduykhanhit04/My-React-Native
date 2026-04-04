@@ -27,13 +27,18 @@ export default function App() {
       
       <FlatList 
       data={students}
+      numColumns={2}
       keyExtractor={item => item.id + ""}
       renderItem={({item}) => {
         return (
           <View style={{
             padding: 30,
             backgroundColor: "pink",
-            marginBottom: 30 }}>
+            marginBottom: 30,
+            marginHorizontal: 30,
+            width: 110,
+            height: 80
+          }}>
             <Text>{item.name}</Text>
           </View>
         )

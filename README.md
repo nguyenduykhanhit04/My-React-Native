@@ -10,7 +10,8 @@
 - Parent and Child:
   - Parent: là View cha
   - Child: là View con
-  - Nếu muốn thuộc tính bên trong Parent không bị Parent ảnh hưởng thì phải đặt thuộc tính style cho Child
+  - Nếu muốn thuộc tính bên trong Parent không bị Parent ảnh hưởng 
+    thì phải đặt thuộc tính style cho Child
   - Ví dụ:
     <View style={styles.parent}>
     <View style={styles.child}>
@@ -27,3 +28,10 @@
 - Array : dùng map() render ra list
 - ScrollView : dùng để vuốt lên vuốt xuống giao diện
 - Flatlist
+
+- Todo list P1: viết vào textbox bấm add thì nó hiển thị ra màn hình
+- Todo list P2: TouchableOpacity + Pressable 
+  :: Khi tap vào thì nó sẽ có hiệu ứng động, 
+  Pressable là phiên bản sau của TouchableOpacity, 
+  nếu muốn Pressable hiệu ứng như như TouchableOpacity thì cần thêm style vào.
+  :: viết thêm function delete để khi tap vào thì nó xoá lun

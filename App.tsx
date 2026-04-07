@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Button, ScrollView, FlatList, StyleSheet, Text, TextInput, View } from 'react-native';
+import { Button, ScrollView, FlatList, StyleSheet, Text, TextInput, View, TouchableOpacity, Pressable } from 'react-native';
 
 interface ITodo {
   id: number,
@@ -15,11 +15,21 @@ export default function App() {
   }
 
   const handleAddTodo = () => {
-    if(!todo) return;
+    if(!todo) {
+      alert("Nhập vào đi bạn");
+      return;
+    };
     setListTodo([...listTodo, 
       { id: randomInteger(2, 20000), name: todo }
-    ])
+    ]);
+    setTodo("")
   }
+
+  const deleteTodo = (id: number) => {
+    const newTodos = listTodo.filter(item => item.id !== id );
+    setListTodo(newTodos)
+  }
+
 
   return (
     
@@ -44,11 +54,20 @@ export default function App() {
           keyExtractor={item => item.id + ""}
           renderItem={({item}) => {
             return (
-              <Text style = {styles.todoItem}>{item.name}</Text>
+              <Pressable 
+              style={({pressed}) => ({opacity: pressed ? 0.5 : 1})}
+              onPress={() => deleteTodo(item.id)}>
+                  <Text 
+                    style = {styles.todoItem}  
+                  >
+                    {item.name}
+                </Text>
+              </Pressable>
+              
             )
           }}
         />
-        {/* <Text>{JSON.stringify(listTodo)}</Text> */}
+        
       </View>
     </View> 
     

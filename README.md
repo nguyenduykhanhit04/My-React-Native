@@ -37,3 +37,5 @@
   :: viết thêm function delete để khi tap vào thì nó xoá lun
 - Alert trong React Native
 - TouchableWithoutFeedback
+
+- Flexbox

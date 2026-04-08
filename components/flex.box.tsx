@@ -1,11 +1,13 @@
 import { View, Text, StyleSheet } from "react-native"
+import AntDesign from '@expo/vector-icons/AntDesign';
 
 const styles = StyleSheet.create({
     container: {
         marginTop: 40,
         flexDirection: "row",
-        justifyContent: "center",
+        justifyContent: "space-around",
         alignItems: "center",
+        flexWrap: "wrap",
         flex: 1
     },
 
@@ -33,7 +35,7 @@ const styles = StyleSheet.create({
 const FlexBox = () => {
     return (
         <View style={styles.container}>
-            
+            <AntDesign name="aliwangwang" size={24} color="black" />
             <View style={styles.item1}>
                 <Text>Item 1</Text>
             </View>

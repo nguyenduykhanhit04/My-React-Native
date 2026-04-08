@@ -39,3 +39,5 @@
 - TouchableWithoutFeedback
 
 - Flexbox
+- Icon
+- Fonts

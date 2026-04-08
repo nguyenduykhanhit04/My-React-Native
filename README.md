@@ -41,3 +41,5 @@
 - Flexbox
 - Icon
 - Fonts
+- Folder Utils>const.ts
+- Navigation (điều hướng trang)

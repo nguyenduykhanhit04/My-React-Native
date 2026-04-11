@@ -8,6 +8,9 @@ const HomeScreen = () => {
             <Button title="View Detail" 
                 onPress={() => alert("mew")}
             />
+            <Button title="View Detail" 
+                onPress={() => alert("mew")}
+            />
         </View>
     )
 }

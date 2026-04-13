@@ -1,15 +1,14 @@
 import { Button, Text, View } from "react-native"
+import { NOTOSANS } from "../../utils/const";
 
+const HomeScreen = (props: any) => {
+    const { navigation } = props;
 
-const HomeScreen = () => {
     return (
         <View>
-            <Text>Home Screen</Text>
+            <Text style={{ fontFamily: NOTOSANS, fontSize: 20 }}>Home Screen</Text>
             <Button title="View Detail" 
-                onPress={() => alert("mew")}
-            />
-            <Button title="View Detail" 
-                onPress={() => alert("mew")}
+                onPress={() => navigation.navigate("Detail")}
             />
         </View>
     )

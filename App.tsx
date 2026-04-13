@@ -21,6 +21,8 @@ export default function App() {
     return <Text>Loading...</Text>;
   }
 
+  const Stack = createNativeStackNavigator<RootStackParamList>();
+
   return (
     <NavigationContainer>
       <Stack.Navigator>

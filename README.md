@@ -43,3 +43,10 @@
 - Fonts
 - Folder Utils>const.ts
 - Navigation (điều hướng trang)
+
+- 2 cách điều hướng Navigation 
+  1: Sử dụng props và const { navigation } = props;
+  2: Sử dụng const navigation: NavigationProp<RootStackParamList> = useNavigation();
+  props.navigation → có sẵn → dùng luôn
+  useNavigation() → tự lấy → linh hoạt hơn
+  TypeScript → để code không lỗi
